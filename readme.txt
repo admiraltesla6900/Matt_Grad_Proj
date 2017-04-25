@@ -1,0 +1,1 @@
+Phishing ad demonstration for a class project. The faux ad site will identify the connecting browser, display an ad tailored to that browser, then attempt to download a benign payload. This project is for educational and demonstration purposes only.
