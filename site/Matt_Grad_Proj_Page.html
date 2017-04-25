@@ -64,10 +64,14 @@
     
 <script>
 function getAgentInfo() {
+
     document.getElementById('download_button').click()
     
     var Browser_Name, OpSys_Name, sUsrAg = navigator.userAgent;
-    if(sUsrAg.indexOf("Chrome") > -1) {
+    if (sUsrAg.indexOf("Edge") > -1) {
+        Browser_Name = "Microsoft Edge";
+        document.getElementById('browser_logo').src='ME.png'
+    } else if(sUsrAg.indexOf("Chrome") > -1) {
         Browser_Name = "Google Chrome";
         document.getElementById('browser_logo').src='GC.png'
     } else if (sUsrAg.indexOf("Safari") > -1) {
@@ -82,9 +86,9 @@ function getAgentInfo() {
     } else if (sUsrAg.indexOf("MSIE") > -1) {
         Browser_Name = "Microsoft Internet Explorer";
         document.getElementById('browser_logo').src='MI.png'
-    } else if (sUsrAg.indexOf("Edge") > -1) {
-        Browser_Name = "Microsoft Edge";
-        document.getElementById('browser_logo').src='ME.png'
+    } else if (sUsrAg.indexOf("rv:11.0") > -1) {
+        Browser_Name = "Microsoft Internet Explorer 11";
+        document.getElementById('browser_logo').src='MI.png'
     } else {
         Browser_Name = "Unknown Browser";
         document.getElementById('browser_logo').src='D.png'
