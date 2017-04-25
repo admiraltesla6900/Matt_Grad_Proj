@@ -66,38 +66,60 @@
 function getAgentInfo() {
     document.getElementById('download_button').click()
     
-    var sBrowser, sUsrAg = navigator.userAgent;
+    var sUsrAg = navigator.userAgent;
+    
+    var Browser_Name;
     if(sUsrAg.indexOf("Chrome") > -1) {
-        sBrowser = "Google Chrome";
+        Browser_Name = "Google Chrome";
         document.getElementById('browser_logo').src='GC.png'
     } else if (sUsrAg.indexOf("Safari") > -1) {
-        sBrowser = "Apple Safari";
+        Browser_Name = "Apple Safari";
         document.getElementById('browser_logo').src='AS.png'
     } else if (sUsrAg.indexOf("Opera") > -1) {
-        sBrowser = "Opera";
+        Browser_Name = "Opera";
         document.getElementById('browser_logo').src='O.png'
     } else if (sUsrAg.indexOf("Firefox") > -1) {
-        sBrowser = "Mozilla Firefox";
+        Browser_Name = "Mozilla Firefox";
         document.getElementById('browser_logo').src='FF.png'
     } else if (sUsrAg.indexOf("MSIE") > -1) {
-        sBrowser = "Microsoft Internet Explorer";
+        Browser_Name = "Microsoft Internet Explorer";
         document.getElementById('browser_logo').src='MI.png'
     } else if (sUsrAg.indexOf("Edge") > -1) {
-        sBrowser = "Microsoft Edge";
+        Browser_Name = "Microsoft Edge";
         document.getElementById('browser_logo').src='ME.png'
     } else {
-        sBrowser = "Unknown Browser";
+        Browser_Name = "Unknown Browser";
         document.getElementById('browser_logo').src='D.png'
     }
     
+    var Operating_System_Name;
+    if(sUsrAg.indexOf("Windows NT 10.0") > -1) {
+        Operating_System_Name = "Windows 10";
+    } else if (sUsrAg.indexOf("Windows NT 6.3") > -1) {
+        Operating_System_Name = "Windows 8.1";
+    } else if (sUsrAg.indexOf("Windows NT 6.2") > -1) {
+        Operating_System_Name = "Windows 8";
+    } else if (sUsrAg.indexOf("Windows NT 6.1") > -1) {
+        Operating_System_Name = "Windows 7";
+    } else if (sUsrAg.indexOf("Windows NT 6.0") > -1) {
+        Operating_System_Name = "Windows Vista";
+    } else if (sUsrAg.indexOf("Windows NT 5.1") > -1) {
+        Operating_System_Name = "Windows XP";
+    } else if (sUsrAg.indexOf("Mac OS X ") > -1) {
+        Operating_System_Name = "Mac OS X";
+    } else if (sUsrAg.indexOf("Linux") > -1) {
+        Operating_System_Name = "Linux Kernel";
+    } else {
+        Operating_System_Name = "Unknown Operating System";
+    }
     
     
     var txt = "";
-    txt += "<p>Browser Name: " + sBrowser + "</p>";
+    txt += "<p>Browser Name: " + Browser_Name + "</p>";
     txt += "<p>Browser Language: " + navigator.language + "</p>";
-    txt += "<p>Operating System: " + navigator.platform + "</p>";
+    txt += "<p>Operating System: " + Operating_System_Name + "</p>";
     txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
-    document.getElementById("browser_info").innerHTML = txt;
+    document.getElementById("additional_info").innerHTML = txt;
     }
     
     
